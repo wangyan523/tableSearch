@@ -2,7 +2,8 @@
   <div class="module">
     <Modal 
       v-model="isShowPopupTable"
-      :mask="false"
+      :mask="isMask"
+      :mask-closable="false"
       :closable="false"
       :footer-hide="true"
       :transfer="true"
@@ -39,7 +40,7 @@
           <li class="module_li">
             <Button @click="popSearchClick" class="module_btn" type="primary" icon="ios-search"></Button>
           </li>
-          <li class="module_li">
+          <li class="module_li" v-if="isClearBtn">
             <Button @click="popDelClick" class="module_btn" type="primary">清除</Button>
           </li>
         </ul>
@@ -81,6 +82,12 @@ export default {
     isShowPopupTable: {
       default: false
     }, //控制弹框显示/隐藏
+    isClearBtn: {
+      default: true
+    }, //是否显示清除按钮
+    isMask: {
+      default: true
+    },//是否显示遮罩
     moduleCoData: {
       default() {
         return [

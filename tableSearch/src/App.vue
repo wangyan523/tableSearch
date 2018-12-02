@@ -3,17 +3,26 @@
     <div @click="btnClick" class="btn">按钮</div>
     <PopupTable
       :isShowPopupTable="isShowPopupTable"
+      @moduleCloseClick="moduleCloseClick"
     />
   </div>
 </template>
 
 <script>
 import PopupTable from './components/popup-table'
+let mixin  = {
+  data () {
+    return {
+      isData: 'yes'
+    }
+  }
+}
 export default {
   name: 'App',
   components: {
     PopupTable
   },
+  // mixins: [mixin],
   data() {
     return {
       isShowPopupTable: false
@@ -22,6 +31,9 @@ export default {
   methods: {
     btnClick() {
       this.isShowPopupTable = true
+    },
+    moduleCloseClick() {
+      this.isShowPopupTable = false
     }
   }
 }
