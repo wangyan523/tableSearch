@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       'attrsMap': {
-        ':class': 'c',
+        ':class': 'cccc',
         'class': 'demo',
         'v-if': 'isShow'
       },

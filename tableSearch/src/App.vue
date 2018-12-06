@@ -10,6 +10,7 @@
 
 <script>
 import PopupTable from './components/popup-table'
+import Directives from '../'
 let mixin  = {
   data () {
     return {
