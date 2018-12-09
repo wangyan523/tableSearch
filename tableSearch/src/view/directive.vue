@@ -1,7 +1,7 @@
 <template>
   <div>
     <input v-focus type="text" placeholder="请输入">
-    <div :class="c" class="demo" v-if="isShow">
+    <div :class="c" class="demo1" v-if="isShow">
       <span v-for="item in sz">{{item}}</span>
     </div>
   </div>
