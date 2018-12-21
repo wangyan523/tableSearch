@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home.vue'
-import Form from '../components/form/form.vue'
+import FormEx from '../view/form-ex.vue'
 Vue.use(Router)
 
 const router = new Router({
@@ -12,7 +12,7 @@ const router = new Router({
     },
     {
       path: '/form',
-      component: Form 
+      component: FormEx 
     }
   ]
 })

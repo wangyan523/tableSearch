@@ -11,7 +11,7 @@
 import mixins_emitter from '../../mixins/emitter.js'
 export default {
   name: 'iinput',
-  mixins: mixins_emitter,
+  mixins: [mixins_emitter],
   data() {
     return {
       currentvalue: this.value
@@ -27,10 +27,10 @@ export default {
       const value = event.target.value 
       this.currentvalue = value 
       this.$emit('input', value)
-      this.dispatch('iformitem', 'on-input-change', value)
+      this.dispatch('iformitem', 'on-form-change', value)
     },
     handleBlur() {
-      this.dispatch('iformitem', 'on-input-blur', this.currentvalue)
+      this.dispatch('iformitem', 'on-form-blur', this.currentvalue)
     }
   }
 }
