@@ -58,6 +58,7 @@ function findBrothersComponents(context, componentName, exceptMe = true) {
   let res = context.$parent.$children.filter(item => {
     return item.$options.name === componentName
   })
+  // Vue.js 在渲染组件时，都会给每个组件加一个内置的属性 _uid，这个 _uid 是不会重复的
   let index = res.findIndex(item => item._uid === context._uid)
   if (exceptMe) res.splice(index, 1)
   return res
