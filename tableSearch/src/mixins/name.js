@@ -1,9 +1,9 @@
 function foo2() {
   fn1();
 }
-function foo1 () {
-  fn1();
-}
+// function foo1 () {
+//   fn1();
+// }
 
 export default {
   data() {
