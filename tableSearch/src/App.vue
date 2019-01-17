@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Button @click="btnClick" type="primary">按钮</Button>
+    <!-- <Button @click="btnClick" type="primary">按钮</Button>
     <PopupTable :isShowPopupTable="isShowPopupTable" @moduleCloseClick="moduleCloseClick" />
-    <i-button :size="'large'" @on-click="bHandleClick">
+    <i-button :size="'large'" @on-click="bHandleClick"> -->
       <!-- <i-icon slot="icon" @on-click="bHandleClick">🌹</i-icon> -->
-    </i-button>
-    <com-a ref="coma" @click.native="handleComAClick"></com-a>
-    <router-view></router-view>
+    <!-- </i-button>
+    <com-a ref="coma" @click.native="handleComAClick"></com-a> -->
+    <render-func></render-func>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
+  import RenderFunc from './view/renderFun.vue'
   import PopupTable from "./components/popup-table";
   import {
     Button
@@ -31,7 +33,8 @@
     components: {
       PopupTable,
       IButton,
-      ComA
+      ComA,
+      RenderFunc
     },
     provide() {
       return {
@@ -65,7 +68,7 @@
     },
     mounted() {
       let coma = this.$refs.coma;
-      console.log(coma, coma.title);
+      // console.log(coma, coma.title);
       // coma.sayHello()
       this.$on("app-click", msg => {
         console.log(msg);
